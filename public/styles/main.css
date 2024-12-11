@@ -1,6 +1,6 @@
-body,h1,h2,h3,h4,h5,h6
-{
-    font-family: "Raleway", sans-serif
+/* Basic reset and typography */
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway", sans-serif;
 }
 
 body, html {
@@ -8,7 +8,7 @@ body, html {
     line-height: 1.8;
 }
 
-/* Full height image header */
+/* Full height header image */
 .bgimg-1 {
     background-position: center;
     background-size: cover;
@@ -16,10 +16,81 @@ body, html {
     min-height: 100%;
 }
 
-.w3-bar .w3-button {
+/* Product grid container */
+.w3-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Each product's container */
+.product {
+    width: 100%;
+    max-width: 300px;  /* Limiting the width */
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    padding: 15px;
+}
+
+.product img {
+    width: 100%;
+    height: 200px;  /* Set a fixed height to maintain uniform size */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Hover effect for products */
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product-info {
+    text-align: center;
+    padding: 10px;
+}
+
+.product-info p {
+    font-size: 1.2rem;
+}
+
+.product-info .price {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Add to cart button style */
+.w3-button.add-to-cart {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.w3-button.add-to-cart:hover {
+    background-color: #45a049;
+}
+
+/* Cart button in navbar */
+.w3-bar-item.w3-button {
     padding: 16px;
 }
 
-.spacer {
-    margin-bottom: 16px;
+/* Utilities */
+.spacer100 {
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
 }
