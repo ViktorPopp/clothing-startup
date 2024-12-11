@@ -19,3 +19,7 @@ body, html {
 .w3-bar .w3-button {
     padding: 16px;
 }
+
+.spacer {
+    margin-bottom: 16px;
+}
