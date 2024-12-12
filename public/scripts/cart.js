@@ -13,9 +13,48 @@ function addToCart(name, price, image) {
     updateCartCount();
 }
 
+// Function to clear the cart
+function clearCart() {
+    // Remove the cart data from local storage
+    localStorage.removeItem('cart');
+
+    // Clear the cart display
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotalElement = document.getElementById('cart-total');
+
+    cartItemsContainer.innerHTML = '<p>Your cart is now empty.</p>';
+    cartTotalElement.innerHTML = '';
+
+    // Update the cart count in the navbar (if applicable)
+    updateCartCount();
+}
+
+// Function to update the cart count in the navbar
+function updateCartCount() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+}
+
 // Save cart to localStorage
 function saveCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Function to remove a single item from the cart
+function removeItemFromCart(index) {
+    // Retrieve the current cart from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Remove the item at the specified index
+    cart.splice(index, 1);
+
+    // Save the updated cart back to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Update the cart count in the navbar
+    updateCartCount();
+
+    // Optionally, refresh the cart page to show the updated cart
+    displayCart();
 }
 
 // Update cart item count in navbar
